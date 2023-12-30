@@ -1,9 +1,7 @@
 # docker-Java-kubernetes-project
 Deploying Java Applications with Docker and Kubernetes
 
-Credit: https://github.com/danielbryantuk/oreilly-docker-java-shopping/
-
-Certainly! You can create a shell script to automate these steps. Below is an example of a simple shell script that combines the described steps. Save this script with a `.sh` extension, and make it executable using the `chmod +x script_name.sh` command. Then, you can run it using `./script_name.sh`.
+Create a shell script to automate these steps. Below is an example of a simple shell script that combines the described steps. Save this script with a `.sh` extension, and make it executable using the `chmod +x script_name.sh` command or use this one also chmod 777 script_name.sh` command. Then, you can run it using `./script_name.sh`.
 
 ```bash
 #!/bin/bash
@@ -39,9 +37,8 @@ git push origin main
 echo "Script executed successfully!"
 ```
 
-Please note:
+Note:
 
-1. Replace `yourusername`, `source-repo`, `new-repo`, and `YourAccessToken` with your GitHub username, repository names, and a valid GitHub access token, respectively.
-2. Make sure to replace `main` with the appropriate branch name if you're using a different branch.
+Must and should please replace `yourusername`, `source-repo`, `new-repo`, and `YourAccessToken` with your GitHub username, repository names, and a valid GitHub access token.
+Make sure to replace `main` with the appropriate branch name if you're using a different branch.
 
-Keep in mind that using a personal access token is recommended for automation, and you should treat it with care. Ensure that your token has the necessary permissions to create repositories. Also, use version control (e.g., git) for your script and avoid hardcoding sensitive information directly into the script for security reasons.
