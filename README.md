@@ -53,8 +53,8 @@ Create a shell script to automate these steps. Below is an example of a simple s
 #!/bin/bash
 
 # Set your repository URLs
-source_repo_url="https://github.com/yourusername/source-repo.git"
-new_repo_url="https://github.com/yourusername/new-repo.git"
+source_repo_url="https://github.com/repositoryname/source-repo.git"
+new_repo_url="https://github.com/repositoryname/new-repo.git"
 
 # Clone source code from GitHub to local
 git clone "$source_repo_url"
