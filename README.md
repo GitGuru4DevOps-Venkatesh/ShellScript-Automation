@@ -1,4 +1,3 @@
-# docker-Java-kubernetes-project
 **Automate Git and GitHub Tasks with a Simple Shell Script  Step-by-Step Tutorial**
 
 ------------------------------------------------------------------------------------------------------------
