@@ -6,6 +6,572 @@ Step 1: Introduction
 
 "Hello, everyone! Welcome back to the channel. Today, we have a practical tutorial where we'll be automating some common Git and GitHub tasks using a simple shell script. Let's dive in!"
 
+***Basic shell script commands along with examples that you can use to explain during your training session:***
+
+### 1. **`echo` - Print Text to the Terminal**
+The `echo` command is used to display a line of text or a variable's value in the terminal.
+
+```bash
+#!/bin/bash
+echo "Hello, World!"
+```
+
+### 2. **`variables` - Store Data in Variables**
+Variables are used to store data that can be used later in the script.
+
+```bash
+#!/bin/bash
+name="Venkatesh"
+echo "My name is $name"
+```
+
+### 3. **`read` - User Input**
+The `read` command takes input from the user.
+
+```bash
+#!/bin/bash
+echo "Enter your name:"
+read name
+echo "Hello, $name!"
+```
+
+### 4. **`if` Statements - Conditional Statements**
+`if` statements are used to make decisions based on conditions.
+
+```bash
+#!/bin/bash
+echo "Enter a number:"
+read number
+if [ $number -gt 10 ]
+then
+  echo "The number is greater than 10."
+else
+  echo "The number is 10 or less."
+fi
+```
+
+### 5. **`for` Loops - Repeating Tasks**
+`for` loops allow you to repeat a set of commands for each item in a list.
+
+```bash
+#!/bin/bash
+for i in 1 2 3 4 5
+do
+  echo "Iteration $i"
+done
+```
+
+### 6. **`while` Loops - Repeating Tasks Until a Condition is Met**
+`while` loops continue executing the commands as long as the condition is true.
+
+```bash
+#!/bin/bash
+counter=1
+while [ $counter -le 5 ]
+do
+  echo "Counter is $counter"
+  ((counter++))
+done
+```
+
+### 7. **`case` Statements - Multi-way Branching**
+`case` statements are used for multi-way branching.
+
+```bash
+#!/bin/bash
+echo "Enter a number between 1 and 3:"
+read number
+case $number in
+  1) echo "You chose one!";;
+  2) echo "You chose two!";;
+  3) echo "You chose three!";;
+  *) echo "Invalid choice";;
+esac
+```
+
+### 8. **`functions` - Grouping Commands**
+Functions allow you to group commands and reuse them.
+
+```bash
+#!/bin/bash
+greet() {
+  echo "Hello, $1!"
+}
+greet "Venkatesh"
+```
+
+### 9. **`date` - Display the Current Date and Time**
+The `date` command displays the current date and time.
+
+```bash
+#!/bin/bash
+echo "The current date and time is:"
+date
+```
+
+### 10. **`mkdir` and `rmdir` - Create and Remove Directories**
+`mkdir` creates a directory, and `rmdir` removes an empty directory.
+
+```bash
+#!/bin/bash
+mkdir my_directory
+echo "Directory created"
+rmdir my_directory
+echo "Directory removed"
+```
+
+### 11. **`touch` and `rm` - Create and Delete Files**
+`touch` creates a new empty file, and `rm` deletes a file.
+
+```bash
+#!/bin/bash
+touch myfile.txt
+echo "File created"
+rm myfile.txt
+echo "File deleted"
+```
+
+### 12. **`chmod` - Change File Permissions**
+`chmod` changes the file's permissions.
+
+```bash
+#!/bin/bash
+touch myfile.txt
+chmod 755 myfile.txt
+echo "File permissions changed"
+```
+
+### 13. **`grep` - Search for Patterns in Files**
+`grep` searches for patterns within files.
+
+```bash
+#!/bin/bash
+echo "This is a test file" > file.txt
+grep "test" file.txt
+```
+
+### 14. **`find` - Search for Files**
+`find` searches for files in a directory hierarchy.
+
+```bash
+#!/bin/bash
+find /path/to/directory -name "*.txt"
+```
+
+### 15. **`ps` - Display Running Processes**
+The `ps` command shows the currently running processes.
+
+```bash
+#!/bin/bash
+ps aux
+```
+Here are more basic shell script commands with examples to enhance your training session:
+
+### 16. **`ls` - List Directory Contents**
+The `ls` command lists the contents of a directory.
+
+```bash
+#!/bin/bash
+ls -l
+```
+
+### 17. **`pwd` - Print Working Directory**
+`pwd` prints the current directory's path.
+
+```bash
+#!/bin/bash
+pwd
+```
+
+### 18. **`cd` - Change Directory**
+`cd` changes the current directory.
+
+```bash
+#!/bin/bash
+cd /path/to/directory
+pwd
+```
+
+### 19. **`cp` - Copy Files and Directories**
+`cp` copies files or directories.
+
+```bash
+#!/bin/bash
+cp source.txt destination.txt
+```
+
+### 20. **`mv` - Move/Rename Files and Directories**
+`mv` moves or renames files and directories.
+
+```bash
+#!/bin/bash
+mv oldname.txt newname.txt
+```
+
+### 21. **`cat` - Concatenate and Display Files**
+`cat` displays the content of a file.
+
+```bash
+#!/bin/bash
+cat filename.txt
+```
+
+### 22. **`head` and `tail` - View the Start and End of a File**
+`head` displays the beginning of a file, and `tail` shows the end.
+
+```bash
+#!/bin/bash
+head -n 5 filename.txt
+tail -n 5 filename.txt
+```
+
+### 23. **`sed` - Stream Editor for Filtering and Transforming Text**
+`sed` can be used to find and replace text in a file.
+
+```bash
+#!/bin/bash
+sed 's/oldword/newword/' filename.txt
+```
+
+### 24. **`awk` - Pattern Scanning and Processing Language**
+`awk` processes and analyzes text files.
+
+```bash
+#!/bin/bash
+awk '{print $1}' filename.txt
+```
+
+### 25. **`xargs` - Build and Execute Command Lines from Standard Input**
+`xargs` constructs argument lists and executes commands.
+
+```bash
+#!/bin/bash
+echo "file1.txt file2.txt" | xargs rm
+```
+
+### 26. **`sort` - Sort Lines of Text Files**
+`sort` arranges lines of text in alphabetical or numerical order.
+
+```bash
+#!/bin/bash
+sort filename.txt
+```
+
+### 27. **`uniq` - Report or Omit Repeated Lines**
+`uniq` filters out or highlights duplicate lines.
+
+```bash
+#!/bin/bash
+sort filename.txt | uniq
+```
+
+### 28. **`diff` - Compare Files Line by Line**
+`diff` compares two files line by line.
+
+```bash
+#!/bin/bash
+diff file1.txt file2.txt
+```
+
+### 29. **`tar` - Archive Files**
+`tar` is used to create and extract archived files.
+
+```bash
+#!/bin/bash
+tar -cvf archive.tar file1.txt file2.txt
+tar -xvf archive.tar
+```
+
+### 30. **`df` and `du` - Disk Usage**
+`df` shows disk space usage, and `du` shows directory space usage.
+
+```bash
+#!/bin/bash
+df -h
+du -sh /path/to/directory
+```
+
+### 31. **`kill` - Terminate Processes**
+`kill` sends a signal to a process, usually to terminate it.
+
+```bash
+#!/bin/bash
+ps aux | grep process_name
+kill -9 PID
+```
+
+### 32. **`top` and `htop` - System Monitoring**
+`top` displays system processes in real time, while `htop` (if installed) provides a more user-friendly interface.
+
+```bash
+#!/bin/bash
+top
+```
+
+### 33. **`chmod` and `chown` - Change Permissions and Ownership**
+`chmod` modifies file permissions, and `chown` changes file ownership.
+
+```bash
+#!/bin/bash
+chmod 755 filename.txt
+chown user:group filename.txt
+```
+
+### 34. **`scp` - Secure Copy**
+`scp` securely transfers files between hosts.
+
+```bash
+#!/bin/bash
+scp localfile.txt user@remotehost:/path/to/destination
+```
+
+### 35. **`wget` and `curl` - Download Files and Interact with URLs**
+`wget` and `curl` are used for downloading files or interacting with URLs.
+
+```bash
+#!/bin/bash
+wget http://example.com/file.zip
+curl -O http://example.com/file.zip
+```
+
+### 36. **`alias` - Create Shortcuts for Commands**
+`alias` creates shortcuts for longer commands.
+
+```bash
+#!/bin/bash
+alias ll='ls -l'
+```
+
+### 37. **`history` - View Command History**
+`history` shows a list of previously executed commands.
+
+```bash
+#!/bin/bash
+history
+```
+
+### 38. **`crontab` - Schedule Jobs**
+`crontab` schedules recurring tasks.
+
+```bash
+#!/bin/bash
+crontab -e
+# Add a cron job to run a script every day at midnight
+0 0 * * * /path/to/script.sh
+```
+
+### 39. **`ping` - Test Network Connectivity**
+`ping` tests network connectivity to a host.
+
+```bash
+#!/bin/bash
+ping google.com
+```
+
+### 40. **`ssh` - Secure Shell Access**
+`ssh` is used for securely accessing remote servers.
+
+```bash
+#!/bin/bash
+ssh user@remotehost
+```
+Here are additional shell script commands with examples to further enrich your training session:
+
+### 41. **`trap` - Handle Signals and Clean Up**
+`trap` allows you to handle signals and clean up resources before a script exits.
+
+```bash
+#!/bin/bash
+trap "echo 'Script interrupted'; exit" INT
+echo "Running script... Press Ctrl+C to interrupt."
+sleep 10
+echo "Script completed."
+```
+
+### 42. **`export` - Set Environment Variables**
+`export` sets environment variables that are inherited by child processes.
+
+```bash
+#!/bin/bash
+export MY_VAR="Hello, World!"
+echo $MY_VAR
+```
+
+### 43. **`source` - Execute Commands from a File in the Current Shell**
+`source` runs commands from a script file in the current shell.
+
+```bash
+#!/bin/bash
+# Save the following lines in a file named "myscript.sh"
+MY_VAR="Hello from source!"
+echo $MY_VAR
+
+# Then, run the script with source
+source myscript.sh
+```
+
+### 44. **`basename` and `dirname` - Extract File Name and Directory Path**
+`basename` extracts the file name from a path, while `dirname` extracts the directory path.
+
+```bash
+#!/bin/bash
+filepath="/path/to/myfile.txt"
+basename $filepath  # Output: myfile.txt
+dirname $filepath   # Output: /path/to
+```
+
+### 45. **`test` - Evaluate Conditional Expressions**
+`test` evaluates expressions to help make decisions in scripts.
+
+```bash
+#!/bin/bash
+file="myfile.txt"
+if test -f $file
+then
+  echo "$file exists."
+else
+  echo "$file does not exist."
+fi
+```
+
+### 46. **`until` Loops - Repeat Until a Condition is True**
+`until` loops repeat commands until a condition becomes true.
+
+```bash
+#!/bin/bash
+counter=1
+until [ $counter -gt 5 ]
+do
+  echo "Counter is $counter"
+  ((counter++))
+done
+```
+
+### 47. **`tee` - Read from Standard Input and Write to Standard Output and Files**
+`tee` reads from standard input and writes to both standard output and files.
+
+```bash
+#!/bin/bash
+echo "Hello, World!" | tee output.txt
+```
+
+### 48. **`bc` - Command-line Calculator**
+`bc` is used for mathematical calculations.
+
+```bash
+#!/bin/bash
+echo "3.14 * 2" | bc
+```
+
+### 49. **`sleep` - Delay Execution**
+`sleep` pauses execution for a specified number of seconds.
+
+```bash
+#!/bin/bash
+echo "Wait for 5 seconds..."
+sleep 5
+echo "Done waiting."
+```
+
+### 50. **`nc` - Netcat Utility for Reading and Writing Network Connections**
+`nc` (netcat) is a versatile networking tool.
+
+```bash
+#!/bin/bash
+# Start a simple TCP server on port 1234
+nc -l 1234
+```
+
+### 51. **`jobs`, `fg`, `bg` - Manage Background and Foreground Jobs**
+`jobs` lists background jobs, `fg` brings a job to the foreground, and `bg` sends it to the background.
+
+```bash
+#!/bin/bash
+sleep 30 &  # Start sleep in the background
+jobs        # List background jobs
+fg %1       # Bring job 1 to the foreground
+```
+
+### 52. **`nohup` - Run a Command Immune to Hangups**
+`nohup` runs a command immune to hangups, allowing it to continue running even after logging out.
+
+```bash
+#!/bin/bash
+nohup long_running_command &
+```
+
+### 53. **`printf` - Format and Print Data**
+`printf` provides more control over output formatting compared to `echo`.
+
+```bash
+#!/bin/bash
+printf "Name: %s\nAge: %d\n" "Venkatesh" 30
+```
+
+### 54. **`env` - Display or Set Environment Variables**
+`env` displays the current environment variables or runs a command in a modified environment.
+
+```bash
+#!/bin/bash
+env | grep PATH
+```
+
+### 55. **`cut` - Remove Sections from Each Line of Files**
+`cut` extracts sections from each line of a file.
+
+```bash
+#!/bin/bash
+echo "Hello,World" | cut -d',' -f1  # Output: Hello
+```
+
+### 56. **`paste` - Merge Lines of Files**
+`paste` merges lines of files horizontally.
+
+```bash
+#!/bin/bash
+paste file1.txt file2.txt
+```
+
+### 57. **`yes` - Repeatedly Output a String**
+`yes` repeatedly outputs a string until stopped.
+
+```bash
+#!/bin/bash
+yes "Repeating message"
+```
+
+### 58. **`wc` - Word, Line, Character, and Byte Count**
+`wc` counts words, lines, characters, and bytes in files.
+
+```bash
+#!/bin/bash
+wc -l file.txt  # Count lines
+wc -w file.txt  # Count words
+wc -c file.txt  # Count characters
+```
+
+### 59. **`rev` - Reverse Lines Characterwise**
+`rev` reverses the characters in each line of a file.
+
+```bash
+#!/bin/bash
+echo "abcd" | rev  # Output: dcba
+```
+
+### 60. **`id` - Display User Identity**
+`id` displays the user and group identity.
+
+```bash
+#!/bin/bash
+id
+```
+
+These additional commands cover a wide array of advanced operations and will help your trainees build a robust foundation in shell scripting.
+
+These additional commands will provide with a comprehensive understanding of shell scripting, covering essential operations in file management, text processing, system monitoring, and more.
+
+These commands and examples cover a wide range of basic shell scripting concepts. You can build on these examples by explaining how they can be combined to create more complex scripts.
+
 Step 2: Overview of the Shell Script
 
 "Alright, let's take a quick look at the script. This shell script automates the process of cloning source code from an existing GitHub repository, creating a new repository on GitHub, and copying the source code into the new repository. Let's break it down."
